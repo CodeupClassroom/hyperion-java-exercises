@@ -176,7 +176,4 @@ public class StringsLec {
         System.out.println("The fifteenth word in betterHistory is: " + historyStringArray[14]);
     }
 
-
-
-
 }
