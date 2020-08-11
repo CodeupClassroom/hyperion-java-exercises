@@ -158,7 +158,7 @@ public class StringsLec {
         System.out.println(cohortWaterFountain.toUpperCase());
 
         //String trim()
-        String historyRemembrance = "       The people declared Washington's Proclamation of Neutrality a pusillanimous trucking to Britain; despotically conceived and unconstitutionally promulgated.         ";
+        String historyRemembrance = "       The people declared Washington's Proclamation of Neutrality a pusillanimous truckling to Britain; despotically conceived and unconstitutionally promulgated.         ";
         System.out.println(historyRemembrance.trim());
 
         String betterHistory = historyRemembrance.trim(); // String Array -> built-in toString()
