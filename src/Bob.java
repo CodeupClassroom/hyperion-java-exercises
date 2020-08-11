@@ -8,6 +8,13 @@ public class Bob {
         // He says 'Fine. Be that way!' if you address him without actually saying anything. (empty input)
         // He answers 'Whatever.' to anything else.
 
+        MethodsLec thisMethod = new MethodsLec();
+        thisMethod.sayHi("Casey");
+
+        // double number = Math.pow(4,3);
+        // Math mathTool = new Math();
+        // MethodsLec.sayHi("casey");
+
         Scanner sc = new Scanner(System.in);
         boolean again = true; // should we continue or not?
         do {
