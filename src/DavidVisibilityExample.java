@@ -1,6 +1,6 @@
 import oop.Dog;
 
-public class DavidVisibiltyExample {
+public class DavidVisibilityExample {
     // Here is am outside of the oop package, and here in the src directory for our Java files. Notice when Dog's fields are set to public what I can do.
     public static void main(String[] args) {
         Dog dog = new Dog("Peridot", 'F', 19);
