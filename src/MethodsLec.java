@@ -30,22 +30,140 @@ public class MethodsLec {
         // printGreeting("Casey");
         // printGreeting("Casey", 34);
 
-        String changeMe = "hello codeup!"; // changeMe is at @4bbd768b in memory
-        System.out.println("Printing the string's location in memory: ");
-        System.out.println(Integer.toHexString(changeMe.hashCode()));
-        changeMe = changeString(changeMe);
-        System.out.println(Integer.toHexString(changeMe.hashCode()));
-
-        final CohortStudent casey1 = new CohortStudent();
-        System.out.println("First Instance of Casey @memory: ");
-        System.out.println(Integer.toHexString(casey1.hashCode()));
-        System.out.println("Second Instance of Casey @memory: ");
-        System.out.println(Integer.toHexString(casey1.hashCode()));
+        // String changeMe = "hello codeup!"; // changeMe is at @4bbd768b in memory
+        // System.out.println("Printing the string's location in memory: ");
+        // System.out.println(Integer.toHexString(changeMe.hashCode()));
+        // changeMe = changeString(changeMe);
+        // System.out.println(Integer.toHexString(changeMe.hashCode()));
+        //
+        // final CohortStudent casey1 = new CohortStudent();
+        // System.out.println("First Instance of Casey @memory: ");
+        // System.out.println(Integer.toHexString(casey1.hashCode()));
+        // System.out.println("Second Instance of Casey @memory: ");
+        // System.out.println(Integer.toHexString(casey1.hashCode()));
         // System.out.println(s);
         // changeMe = changeString(changeMe);
         // System.out.println(changeMe);
 
+
+        // *********** RECURSION ***************** //
+        count(-99);
+
+        // chopOffUntilTen Recursion Example
+        System.out.println("The final chopped string is: " + chopOffUntilTen("abcdefghijklmnopqrstuvwxyz"));
+
+        System.out.println("The full alphabet, reconstructed, is: " + buildUpUntilTwentySix("abcdef"));
+
+        System.out.println("Built alphabet with ASCII tooling is: " + buildAlpha("abcdef"));
     }
+
+    public static void count(int n) {
+        if (n <= 0) { // what happens if we don't have this 'base case' check?
+            System.out.println("All done!");
+            return;
+        }
+        System.out.println(n);
+        count(n + 1);
+    }
+    // 5
+    // 4
+    // 3
+    // 2
+    // 1
+    // 0
+
+    // write a method that receives a string as input, and removes one letter from the end
+    //   at a time, until the total number of characters is 10 or less
+    //      return the resulting 10 character string (as a String)
+    public static String chopOffUntilTen(String tree) {
+        System.out.println(tree);
+        if( tree.length() <= 11 ) {
+            return tree;
+        }
+        // h e l l o c o d e u p r o c k s
+        // 11 - 1 = 10
+        return chopOffUntilTen( tree.substring(0,tree.length()-1) );
+    }
+
+    public static String buildUpUntilTwentySix(String alpha) {
+        System.out.println(alpha);
+        if ( alpha.length() >= 26 ) {
+            return alpha;
+        }
+        //                             "abcdef"        "g"
+        return buildUpUntilTwentySix(alpha + getNextLetter(alpha));
+    }
+
+    public static String buildAlpha(String alpha) {
+        System.out.println(alpha);
+        if(alpha.length() > 25) {
+            return alpha;
+        }
+        return buildAlpha(alpha + (char)(alpha.length() + 97));
+    }
+
+    public static String getNextLetter(String partialAlphabet) {
+        // get the last character from the 'partialAlphabet'
+        //  return the next alpha letter as a character
+        // 'abcdef' --> want to get the 'f', and find the next letter
+        String lastLetter = partialAlphabet.substring(partialAlphabet.length()-1, partialAlphabet.length());
+        switch (lastLetter) {
+            case "a":
+                return "b";
+            case "b":
+                return "c";
+            case "c":
+                return "d";
+            case "d":
+                return "e";
+            case "e":
+                return "f";
+            case "f":
+                return "g";
+            case "g":
+                return "h";
+            case "h":
+                return "i";
+            case "i":
+                return "j";
+            case "j":
+                return "k";
+            case "k":
+                return "l";
+            case "l":
+                return "m";
+            case "m":
+                return "n";
+            case "n":
+                return "o";
+            case "o":
+                return "p";
+            case "p":
+                return "q";
+            case "q":
+                return "r";
+            case "r":
+                return "s";
+            case "s":
+                return "t";
+            case "t":
+                return "u";
+            case "u":
+                return "v";
+            case "v":
+                return "w";
+            case "w":
+                return "x";
+            case "x":
+                return "y";
+            case "y":
+                return "z";
+            case "z":
+                return "";
+        }
+        return "error";
+    }
+
 
     // public static void changeString(String s) {
     //     s = "Wub a lub a dub dub";
@@ -132,16 +250,22 @@ public class MethodsLec {
     //     count(5);
     // }
 
-    /****** without recursion *********/
+    /****** without recursion *********/  // 2 ^ 3 = 2 * 2 * 2 = 8
     // public static long getPower(int base, int exponent) {
     //     long result = 1;
+    //
     //     for (int i = 1; i <= exponent; i++) {
     //         result = result * base;
+    //         // 1 * 2 = 2
+    //         // 2 * 2 = 4
+    //         // 4 * 2 = 8
     //     }
     //     return result;
     // }
 
     /********* refactored, WITH recursion *********/
+
+    // 2 ^ 3  =  2 * 2 * 2  =  8
     // public static long getPower(int base, int exponent) {
     //     if (exponent == 0) {
     //         return 1;
@@ -150,7 +274,7 @@ public class MethodsLec {
     //     } else if (exponent == 2) {
     //         return base * base;
     //     }
-    //     return base * getPower(base, exponent - 1);
+    //     return base * getPower(base, exponent - 1);  // 2 * (result of getPower(2,2)) = 2 * base * base = 2 * 2 * 2 = 8
     // }
 
 
