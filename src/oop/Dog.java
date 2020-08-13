@@ -1,30 +1,31 @@
 package oop;
 
 public class Dog {
-    public char gender;
-    public int weightInKG;
+    private char gender;
+    private int weightInKG;
     // Notice that I haven't defined a value for these variables. Why do you think I might have done that?
 
-    public String name = "No Name";
-    public String breed = "Unknown/Mixed Breed";
+    private String name = "No Name";
+    private String breed = "Unknown/Mixed Breed";
     // I can give these values a default/starting value by assigning a value. These values can be overwritten. Why?
 
-    public static void bark() {
+    static void bark() {
         System.out.println("Bark bark!");
     }
     // What keyword was added to this method?
 
     public static void main(String[] args) {
-        Dog dog = new Dog();
-        dog.name = "Peridot";
-        dog.gender = 'F';
-        dog.weightInKG = 19;
-        dog.breed = "American Staffordshire Terrier Mix";
+        Dog peri = new Dog("Peridot", 'F', 19, "American Staffordshire Terrier Mix");
+//        peri.name = "Peridot";
+//        peri.gender = 'F';
+//        peri.weightInKG = 19;
+//        peri.breed = "American Staffordshire Terrier Mix";
 
-        System.out.println(dog);
-        System.out.println(dog.name);
-        dog.bark();
+        System.out.println(peri);
+        System.out.println(peri.name);
+        peri.bark();
         Dog.bark();
+
 
         // Notice how that was super inconvenient?
         // How might we make it easier?
@@ -48,7 +49,14 @@ public class Dog {
     }
 
     // We have defined multiple constructor methods here, so let's see how the were made.
-    // Let's create a constructor method! We lack one for a a dog with known name, gender, weightInKG, and breed.
+    // Let's create a constructor method! We lack one for a dog with known name, gender, weightInKG, and breed.
+
+    public Dog(String name, char gender, int weightInKG, String breed) {
+        this.name = name;
+        this.gender = gender;
+        this.weightInKG = weightInKG;
+        this.breed = breed;
+    }
 
     // Look at what's back!
 
@@ -77,5 +85,42 @@ public class Dog {
     // setters will assign the value passed through to the field.
 
     // Let's build some more!
+
+    // getter for the weightInKG property
+    public int getWeightInKG() {
+        return weightInKG;
+    }
+
+    // setter for weightInKG
+    public void setWeightInKG(int weightInKG) {
+        this.weightInKG = weightInKG;
+    }
+
+    public char getGender() {
+        return gender;
+    }
+
+    public void setGender(char gender) {
+        this.gender = gender;
+    }
+
+    public String getBreed() {
+        return breed;
+    }
+
+    public void setBreed(String breed) {
+        this.breed = breed;
+    }
+
+    @Override
+    public String toString() {
+        return "Dog{" +
+                "gender=" + gender +
+                ", weightInKG=" + weightInKG +
+                ", name='" + name + '\'' +
+                ", breed='" + breed + '\'' +
+                '}';
+    }
+
 
 }
