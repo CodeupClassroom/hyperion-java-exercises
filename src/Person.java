@@ -31,10 +31,9 @@ public class Person {
         System.out.println(person5.getName());
         System.out.println(person6.getName());
 
-
     }
 
     public void sayHello() {
-        System.out.println("Hello, World!");
+        System.out.println("Hello, my name is " + this.getName());
     }
 }
