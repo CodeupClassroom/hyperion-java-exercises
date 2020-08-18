@@ -10,6 +10,7 @@ public class PolymorphismDemo {
         ArrayList<Integer> intArrayList = new ArrayList<>();
 
         // class ArrayList extends List {
+        // comment by Casey
 
         List<Integer> intList = intArrayList;
 
