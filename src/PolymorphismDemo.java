@@ -10,6 +10,7 @@ public class PolymorphismDemo {
         ArrayList<Integer> intArrayList = new ArrayList<>();
 
         // class ArrayList extends List {
+        // comment by Casey
 
         List<Integer> intList = intArrayList;
 
@@ -57,18 +58,19 @@ final class Movie {
     // immutable - CAN'T CHANGE IT, EXTEND IT, INHERIT IT.
     // BOOYAH.
 }
-class Drama extends Movie {
-
-}
+// class Drama extends Movie {
+//
+// }
 
 class Hammer {
     public final String smackNail() {
         return "One nail down, twenty-thousand to go";
     }
 }
-class SledgeHammer extends Hammer { // inheritance --> Slegdehammer (subclass) | Hammer (superclass)
-    public String smackNail() {
-        return "Just sunk 10 nails at once";
 
-    }
-}
+// class SledgeHammer extends Hammer { // inheritance --> Slegdehammer (subclass) | Hammer (superclass)
+//     public String smackNail() {
+//         return "Just sunk 10 nails at once";
+//
+//     }
+// }
