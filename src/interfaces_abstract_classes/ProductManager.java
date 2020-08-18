@@ -20,9 +20,11 @@ public class ProductManager extends Employee {
     }
 
     public static void main(String[] args) {
-        ProductManager tom = new ProductManager("Tom Hansen", 51, "San Francisco, CA");
+        Employee tom = new ProductManager("Tom Hansen", 51, "San Francisco, CA");
         tom.introduction();
         tom.doWork();
-        tom.performanceReview();
+        tom.tellJoke();
+        tom.breathe();
+//        tom.performanceReview();
     }
 }

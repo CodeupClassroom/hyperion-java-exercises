@@ -26,7 +26,7 @@ public abstract class Human implements Being{
     }
 
     @Override
-    public void breath() {
+    public void breathe() {
         System.out.println("Air goes in...................... and CO2 goes out.");
     }
 
@@ -34,4 +34,6 @@ public abstract class Human implements Being{
     public void eat() {
         System.out.println("Food goes in... I'm not telling you what goes out...");
     }
+
+    public abstract void tellJoke();
 }

@@ -26,9 +26,11 @@ public class Dev extends Employee {
         debra.introduction();
         debra.writeCode();
         debra.statusReport();
+        debra.eat();
 
-//        Employee craig = new Dev("Craig Summers", 38, "Aurora, IL");
-//        craig.doWork();
+        Employee craig = new Dev("Craig Summers", 38, "Aurora, IL");
+        craig.doWork();
+        craig.introduction();
 //        craig.writeCode();
 
     }

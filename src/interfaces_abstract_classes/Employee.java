@@ -1,14 +1,18 @@
 package interfaces_abstract_classes;
 
 public abstract class Employee extends Human {
-
-
     private String workLocation;
 
     public abstract void doWork();
     public abstract void introduction();
+
     public void statusReport() {
         System.out.println("Working!");
+    }
+
+    @Override
+    public void tellJoke() {
+        System.out.println("Why did the can crusher quit his job?\nBecause it was soda pressing.");
     }
 
     public Employee(String name, int age, String workLocation) {

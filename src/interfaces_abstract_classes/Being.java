@@ -1,6 +1,6 @@
 package interfaces_abstract_classes;
 
 public interface Being {
-    public abstract void breath();
-    abstract void eat();
+    public abstract void breathe();
+    public abstract void eat();
 }
