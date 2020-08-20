@@ -70,7 +70,7 @@ public class HashMapsLecture {
 //        }
 
         // .isEmpty()
-//        System.out.println("cheeses.isEmpty() => " + cheeses.isEmpty());
+        System.out.println("cheeses.isEmpty() => " + cheeses.isEmpty());
     }
 
 }

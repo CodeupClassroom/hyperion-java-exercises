@@ -43,7 +43,8 @@ public class ArrayListsLecture {
 
         //We can add the element at the end...
         cheeses.add("Kraft American Singles");
-
+//        System.out.println(cheeses.size());
+//
 //        for (String cheese : cheeses) {
 //            System.out.println(cheese);
 //        }
@@ -51,15 +52,15 @@ public class ArrayListsLecture {
         // We can also add at an index:
         cheeses.add(9, "White Cheddar");
 
-        System.out.println("~~~~~~~~~~~~~~~~~~~~~~");
-
+//        System.out.println("~~~~~~~~~~~~~~~~~~~~~~");
+//        System.out.println(cheeses.size());
 //        for (String cheese : cheeses) {
 //            System.out.println(cheese);
 //        }
 
         // Notice what happened... We added the element, but...
 
-        System.out.println("~~~~~~~~~~~~~~~~~~~~~~");
+//        System.out.println("~~~~~~~~~~~~~~~~~~~~~~");
 
         // .get() - Return the element at a given index.
 
@@ -71,7 +72,7 @@ public class ArrayListsLecture {
             }
         }
 
-//        System.out.printf("I have %d 86's to sell!\n", initialDCars);
+//        System.out.printf("I have %d 86's to sell!%n", initialDCars);
 
         // .indexOf() - Returns the first index of an element.
 
@@ -79,7 +80,7 @@ public class ArrayListsLecture {
 
         // notice how this doesn't work... (Returns -1)
 //        System.out.println(lot.indexOf(new EightSix()));
-
+//
 //        System.out.println(new EightSix());
 //        for (Car car : lot) {
 //            System.out.println(car);
@@ -115,7 +116,7 @@ public class ArrayListsLecture {
 //            System.out.println(cheese);
 //        }
 
-        nums.remove(2);
+        nums.remove((Integer) 17);
 
 //        for (int num : nums) {
 //            System.out.println(num);
@@ -127,6 +128,8 @@ public class ArrayListsLecture {
 //        System.out.println(lot.size());
 //        lot.remove(new LandCruiser());
 //        System.out.println(lot.size());
+
+//        System.out.println(cheeses.get(4));
 
         //// Take a break... Then we'll talk HashMaps!!!
     }
