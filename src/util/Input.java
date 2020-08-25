@@ -57,16 +57,34 @@ public class Input {
     }
 
     public int getInt(int min, int max) {
-        int input;
+        String input;
+        int parsedInput = 15;
+        boolean exceptionFound = false;
+        boolean inputIncorrect = false;
         do {
+            exceptionFound = false;
             System.out.println("Enter a number between " + min + " and " + max + ".");
-            input = this.scanner.nextInt();
-            if (input < min || input > max) {
-                System.out.println("Input invalid");
+            input = this.scanner.nextLine();
+            try {
+                parsedInput = Integer.parseInt(input);
+                if (parsedInput < min || parsedInput > max) {
+                    System.out.println("Input invalid");
+                    inputIncorrect = true;
+                } else {
+                    // user entered a correct integer
+                    inputIncorrect = false;
+                }
+            } catch( Exception e ) {
+                System.out.println("That is not an integer");
+                System.out.println();
+                exceptionFound = true;
+                // If exception is caught, don't want to check the 'parsedInt' values, due to their not being set up yet
+
             }
-        } while (input < min || input > max);
+
+        } while (exceptionFound || inputIncorrect);
         System.out.println("Input acceptable");
-        return input;
+        return parsedInput;
     }
 
     public int getInt() {
@@ -75,14 +93,22 @@ public class Input {
     }
 
     public double getDouble(double min, double max) {
-        double input;
+        double input = 0.0;
+        boolean incorrectInput = false;
         do {
+            incorrectInput = false;
             System.out.println("Enter a number between " + min + " and " + max + ".");
-            input = this.scanner.nextDouble();
+            try {
+                input = Double.valueOf(this.scanner.nextLine());
+            } catch (NumberFormatException e) {
+                System.out.println("That is not a double");
+                incorrectInput = true;
+            }
             if (input < min || input > max) {
                 System.out.println("Input invalid");
+                System.out.println();
             }
-        } while (input < min || input > max);
+        } while (incorrectInput || input < min || input > max);
         System.out.println("Input acceptable");
         return input;
     }
